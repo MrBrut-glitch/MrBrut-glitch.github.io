@@ -1,92 +1,97 @@
-*
-{
-    margin: 0;
-    padding: 0;
-}
-header
-{
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(Blumen.jpg);
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-}
-.hero
-{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    font-family: 'Dosis', sans-serif;
-}
-h1 {
-    font-size: 60px;
-    letter-spacing: 15px;
-}
-hr {
-    width: 50%;
-    margin: 30px auto;
-    border: 1.5px solid #fff;
-}
-p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.countdown {
-    display: flex;
-    margin-top: 50px;
-
-}
-.countdown div {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-    background: #333;
-    color: #fff;
-    margin: 0 15px;
-    font-size: 3em;
-    font-weight: 500;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
-
-#days {
-  font-size: 200px;
-  color: #db4844;
-}
-#hours {
-  font-size: 150px;
-  color: #f07c22;
-}
-#minutes {
-  font-size: 100px;
-  color: #f6da74;
-}
-#seconds {
-  font-size: 50px;
-  color: #abcd58;
-}
-
-div {
-  display: inline-block;
-  line-height: 1;
-  padding: 20px;
-  font-size: 40px;
-}
-
-span {
-  display: block;
-  font-size: 20px;
-  color: white;
+.clock {
+  &-day {
+    &:before {
+      content: var(--timer-day);
+    }
+  }
+  &-hours {
+    &:before {
+      content: var(--timer-hours);
+    }
+  }
+  &-minutes {
+    &:before {
+      content: var(--timer-minutes);
+    }
+  }
+  &-seconds {
+    &:before {
+      content: var(--timer-seconds);
+    }
+  }
 }
 
 body {
-  text-align: center;
-  font-family: 'Covered By Your Grace', cursive;
-  color: white;
-  background: #222;
+  background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+  font-family: 'Montserrat', 'sans-serif';
+  min-height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  &-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #080808;
+    border-radius: 5px;
+    padding: 60px 20px;
+    box-shadow: 1px 1px 5px rgba(255,255,255,.15), 0 15px 90px 30px rgba(0,0,0,.25);
+    display: flex;
+  }
+  &-col {
+    text-align: center;
+    margin-right: 40px;
+    margin-left: 40px;
+    min-width: 90px;
+    position: relative;
+    &:not(:last-child):before,
+    &:not(:last-child):after{
+      content: "";
+      background-color: rgba(255,255,255,.3);
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      right: -42px;
+    }
+    &:not(:last-child):before {
+      top: 35%;
+    }
+    &:not(:last-child):after {
+      top: 50%;
+    }
+  }
+  &-timer {
+    &:before {
+      color: #fff;
+      font-size: 4.2rem;
+      text-transform: uppercase;
+    }
+  }
+  &-label {
+    color: rgba(255,255,255,.35);
+    text-transform: uppercase;
+    font-size: .7rem;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 825px) {
+  .clock-container {
+  flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .clock-col {
+    & + & {
+      margin-top: 20px;
+    }
+    &:before,
+    &:after {
+      display: none!important;
+    }
+  }
 }
