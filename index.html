@@ -1,83 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Coming Soon</title>
-        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-        <style>
-            *
-{
-    margin: 0;
-    padding: 0;
-}
-header
-{
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(Background.jpg);
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-}
-.hero
-{
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    font-family: 'Dosis', sans-serif;
-}
-h1 {
-    font-size: 60px;
-    letter-spacing: 15px;
-}
-hr {
-    width: 50%;
-    margin: 30px auto;
-    border: 1.5px solid #fff;
-}
-p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.countdown {
-    display: flex;
-    margin-top: 50px;
-
-}
-.countdown div {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-    background: #333;
-    color: #fff;
-    margin: 0 15px;
-    font-size: 3em;
-    font-weight: 500;
-}
-        </style>
-    </head>
-    <body>
-        <header>
-
-            <div class="hero">
-            <p>Eine großartige Webseite aufbauen</p>
-            <h1>COMING SOON</h1>
-
-                <hr>
-                    <p id="launch"></p>
-            </div>
-
-
-        </header>
-        
-        <div id="timer">
-          <div id="days"></div>
-          <div id="hours"></div>
-          <div id="minutes"></div>
-          <div id="seconds"></div>
-        </div>
-    </body>
-</html>
+<div class="clock-container">
+  <div class="clock-col">
+    <p class="clock-day clock-timer">
+    </p>
+    <p class="clock-label">
+      Day
+    </p>
+  </div>
+  <div class="clock-col">
+    <p class="clock-hours clock-timer">
+    </p>
+    <p class="clock-label">
+      Hours
+    </p>
+  </div>
+  <div class="clock-col">
+    <p class="clock-minutes clock-timer">
+    </p>
+    <p class="clock-label">
+      Minutes
+    </p>
+  </div>
+  <div class="clock-col">
+    <p class="clock-seconds clock-timer">
+    </p>
+    <p class="clock-label">
+      Seconds
+    </p>
+  </div>
+</div>
