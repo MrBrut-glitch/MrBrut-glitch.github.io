@@ -36,6 +36,13 @@ h1 {
     margin: 1rem 2rem;
 }
 
+.medium-text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1;
+    margin: 1rem 2rem;
+}
+
 .countdown-el {
     text-align: center;
 }
