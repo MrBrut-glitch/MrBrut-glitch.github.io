@@ -12,8 +12,8 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
-    background: rgb(245,0,0);
-    background: linear-gradient(38deg, rgba(245,0,0,1) 0%, rgba(121,48,9,1) 41%, rgba(255,188,0,1) 100%);
+    background: rgb(245,238,0);
+    background: linear-gradient(38deg, rgba(245,238,0,1) 0%, rgba(255,255,255,1) 51%, rgba(0,185,255,1) 100%);
     margin: 0;
 }
 
