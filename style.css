@@ -5,6 +5,8 @@
 }
 
 body {
+    heigth: 100%;
+    position: relative;
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -14,13 +16,16 @@ body {
     font-family: "Poppins", sans-serif;
     background: rgb(245,238,0);
     background: linear-gradient(38deg, rgba(245,238,0,1) 0%, rgba(255,255,255,1) 51%, rgba(0,185,255,1) 100%);
-    margin: 0;
+    margin: 0 auto;
 }
 
 footer {
-        padding: 10px 20px;
-        background: blue;
-        color: white;
+    position: absolute;
+    bottom: 0;
+    weigth: 100%;
+    heigth: 2em;
+    background: blue;
+    color: white;
 }
 
 footer p {
