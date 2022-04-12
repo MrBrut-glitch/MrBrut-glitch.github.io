@@ -6,7 +6,6 @@
 
 body {
     heigth: 100%;
-    width: 550px;
     position: relative;
     background-size: cover;
     background-position: center center;
@@ -26,15 +25,6 @@ footer {
     width: 100%;
     heigth: 2em;
     background: #0257F7;
-    color: white;
-}
-
-footer p {
-    font-size: 13px;
-    color: white;
-}
-
-footer a {
     font-size: 13px;
     color: white;
 }
