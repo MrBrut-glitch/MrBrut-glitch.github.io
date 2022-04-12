@@ -6,6 +6,7 @@
 
 body {
     heigth: 100%;
+    width: 550px;
     position: relative;
     background-size: cover;
     background-position: center center;
@@ -22,7 +23,7 @@ body {
 footer {
     position: absolute;
     bottom: 0;
-    weigth: 100%;
+    width: 100%;
     heigth: 2em;
     background: blue;
     color: white;
