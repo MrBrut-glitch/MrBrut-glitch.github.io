@@ -3,6 +3,11 @@ const hoursEl = document.getElementById("hours");
 const minsEl = document.getElementById("mins");
 const secondsEl = document.getElementById("seconds");
 
+const dark_mode_button = document.getElementById("dark_mode_button");
+dark_mode_button.addEventListener("click", () => {
+    document.body.classList.toggle("dark_mode");
+});
+
 const newYears = "31 Dec 2022";
 
 function countdown() {
@@ -21,6 +26,8 @@ function countdown() {
     minsEl.innerHTML = formatTime(mins);
     secondsEl.innerHTML = formatTime(seconds);
 }
+
+// Make Random Color for a word
 
 setInterval(() => {
     const colors = [
