@@ -1,0 +1,273 @@
+@import "./default.css";
+
+.cursor {
+    height: 50px;
+    width: 50px;
+    background-color: var(--text);
+    mix-blend-mode: difference;
+    border-radius: 50%;
+
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+
+    transition: all 0.5s ease-in;
+    pointer-events: none;
+    opacity: 0;
+
+    display: grid;
+    place-items: center;
+}
+
+body:hover > .cursor {
+    opacity: 1;
+}
+
+section {
+    min-height: 80vh;
+    margin-bottom: 20vh;
+}
+
+.section--title {
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 30%;
+}
+
+.section--title {
+    margin-bottom: 5vh; 
+    font-weight: 700;
+    line-height: 1;
+}
+
+.fancyText {
+    font-family: 'Cairo Play', sans-serif;
+    font-weight: 700;
+}
+
+.navbar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 10px;
+    background-color: var(--disable);
+    transform: translateX(95%);
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar li.current {
+    background-color: var(--accent);
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar li:hover {
+    transform: translateX(10%);
+    background-color: rgb(241 90 41);
+}
+
+.navbar li a {
+    opacity: 0;
+    padding: 5px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar li:hover a {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    pointer-events: none;
+
+    font-family: 'Cairo Play', sans-serif;
+    line-height: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.about p {
+    /* width: 75%; */
+    margin-bottom: 5vh;
+    -webkit-hyphens: none;
+    -moz-hyphens:    none;
+    -ms-hyphens:     none;
+    hyphens:         none;
+}
+
+.skills h4 {
+    border-bottom: 4px solid var(--accent);
+}
+
+/* .skills h5 {
+    margin-top: 0.5em;
+} */
+
+.skills__container {
+    line-height: 2;
+}
+
+.skills div .skills__container:last-child {
+    margin-bottom: 1em;
+}
+
+.skills__background {
+    width: 100%;
+    flex-grow: 1;
+    background-color: var(--disable);
+    border: none;
+    border-radius: 15px;
+}
+
+.skills__level {
+    width: 0%;
+    white-space: nowrap;
+    background-color: rgb(241 90 41);
+    border: none;
+    border-radius: 15px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.bubble--container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.experience .bubble {
+    margin: 10px;
+    padding: 5px 25px;
+    background-color: var(--accent);
+    border-radius: 50px;
+    color: var(--bg);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.experience .bubble:nth-child(6n+1) {
+    background-color: rgb(251 195 64);
+}
+
+.experience .bubble:nth-child(6n+2) {
+    background-color: rgb(39 170 225);
+}
+
+.experience .bubble:nth-child(6n+3) {
+    background-color: rgb(242 145 198);
+}
+
+.experience .bubble:nth-child(6n+4) {
+    background-color: rgb(241 90 41);
+}
+
+.contact--form {
+    /* width: 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact--form input, .contact--form button {
+    margin-top: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    border: none;
+}
+
+.contact--form input {
+    width: 40%;
+    color: var(--text);
+    background-color: transparent;
+    border-bottom: 4px solid white;
+}
+
+.contact--form input:focus {
+    border-bottom: 4px solid var(--accent);
+    outline: none !important;
+}
+
+.contact--form button {
+    color: var(--accent);
+    background: 
+    linear-gradient(var(--accent) 0 0) no-repeat
+    calc(200% - var(--i, 0) * 100%) 100% / 200% calc(100% * var(--i, 0) + .08em);
+    transition: .3s calc(var(--i, 0) * .3s), background-position .3s calc(.3s - calc(var(--i, 0) * .3s))
+}
+
+.contact--form button:hover {
+    --i: 1;
+    color: var(--text);
+}
+
+.contact--form footer {
+    min-height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.footer__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: var(--text) 1px solid;
+}
+
+.footer__copyright-text,
+.footer__social-media {
+    padding: 2vh 0;
+    text-align: center;
+}
+
+.footer__copyright-text {
+    flex-grow: 1;
+}
+
+.footer__social-media {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .contact {
+        width: 70%;
+    }
+}
