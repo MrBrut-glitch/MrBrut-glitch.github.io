@@ -79,7 +79,6 @@ function setActiveSection() {
 }
 
 const texts = [' web developer', ' software developer', 'n enthusiastic musician']
-
 let typeCursor = gsap.to('.underline', {opacity: 0, ease: "power2.inOupow", repeat: -1})
 
 function startTextAnimation() {
