@@ -39,11 +39,11 @@
 
 /* Mobile phone */
 @media screen and (max-width: 767px) {
-    h1 { font-size: 64px; font-family: 'Cairo Play', sans-serif; }
-    h2 { font-size: 48px; font-family: 'Cairo Play', sans-serif; }
+    h1 { font-size: 80px; font-family: 'Cairo Play', sans-serif; }
+    h2 { font-size: 58px; font-family: 'Cairo Play', sans-serif; }
     h3 { font-size: 32px; }
     h4 { font-size: 24px; }
     h5 { font-size: 20px; }
     p { font-size: 18px; text-align: justify; }
-    strong { font-size: 32px; color: var(--disable); }
+    strong { font-size: 42px; color: var(--disable); }
 }

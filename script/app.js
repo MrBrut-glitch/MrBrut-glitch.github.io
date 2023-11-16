@@ -8,6 +8,15 @@ window.onload = () => {
   window.scrollTo(0, 0)
 }
 
+window.addEventListener('scroll', () => {
+  setActiveSection()
+});
+
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+}
+
+// Cursor-Animation
 const cursor = document.querySelector(".cursor");
 
 window.onmousemove = (e) => {
@@ -24,12 +33,8 @@ window.onmousemove = (e) => {
   });
 }
 
-window.addEventListener('scroll', () => {
-  setActiveSection()
-});
-
 const loadHeroAnimation = () => {
-  const hero = document.querySelector(".hero");
+  const hero = document.querySelector(".hero")
   const heroText = new splitType(hero, { types: 'chars' })
   const heroChars = heroText.chars
 
@@ -47,7 +52,7 @@ const loadHeroAnimation = () => {
       stagger: 0.05,
       duration: 2,
       ease: 'power4.out',
-      delay: 1,
+      delay: 0.5,
       onComplete: function() {
         startTextAnimation()
         setActiveSection()
@@ -56,6 +61,7 @@ const loadHeroAnimation = () => {
   );
 }
 
+// MenuBar ActiveSection-Selector
 function setActiveSection() {
   const sections = document.querySelectorAll('section')
   const navbar = document.querySelector(".navbar")
@@ -79,13 +85,11 @@ function setActiveSection() {
   })
 }
 
-function getTexts() {
-  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? [' web dev', ' software dev', 'n musician'] : [' web developer', ' software developer', 'n enthusiastic musician'];
-}
 
-let texts = getTexts()
-
-window.onresize = () => texts = getTexts()
+// Hero-Animation
+const texts = isMobile() ? 
+              [' web dev', ' software dev', 'n musician'] : 
+              [' web developer', ' software developer', 'n enthusiastic musician']
 
 let typeCursor = gsap.to('.underline', {opacity: 0, ease: "power2.inOupow", repeat: -1})
 
@@ -99,31 +103,38 @@ function startTextAnimation() {
   })
 }
 
+// HighlightText-Bracket AutoAdd
+const fancyText = document.querySelectorAll(".highlight-word")
+fancyText.forEach(text => {
+  text.textContent += "()"
+})
+
+// Skillbar-Animation 
 const skillLevels = document.querySelectorAll('.skills__level')
-
 const levelText = ["Basic", "Semi-Advanced", "Advanced", "Semi-Seasoned", "Seasoned", "Semi-Expert", "Expert"];
-
 const skills_ttl = gsap.timeline()
 
 skillLevels.forEach((skillLevel) => {
     const fillWidth = skillLevel.textContent
-
     const widthNumber = fillWidth.slice(0, fillWidth.indexOf("%")); 
 
-    if(widthNumber <= 15) {
-      skillLevel.textContent += " - " + levelText[0];
-    } else if(widthNumber <= 30 && widthNumber > 15) {
-      skillLevel.textContent += " - " + levelText[1];
-    } else if(widthNumber <= 45 && widthNumber > 30) {
-      skillLevel.textContent += " - " + levelText[2];
-    } else if(widthNumber <= 60 && widthNumber > 45) {
-      skillLevel.textContent += " - " + levelText[3];
-    } else if(widthNumber <= 75 && widthNumber > 60) {
-      skillLevel.textContent += " - " + levelText[4];
-    } else if(widthNumber <= 90 && widthNumber > 75) {
-      skillLevel.textContent += " - " + levelText[5];
-    } else if(widthNumber > 90) {
-      skillLevel.textContent += " - " + levelText[6];
+    if(!isMobile()) {
+      // Only for Desktop
+      if(widthNumber <= 15) {
+        skillLevel.textContent += " - " + levelText[0];
+      } else if(widthNumber <= 30 && widthNumber > 15) {
+        skillLevel.textContent += " - " + levelText[1];
+      } else if(widthNumber <= 45 && widthNumber > 30) {
+        skillLevel.textContent += " - " + levelText[2];
+      } else if(widthNumber <= 60 && widthNumber > 45) {
+        skillLevel.textContent += " - " + levelText[3];
+      } else if(widthNumber <= 75 && widthNumber > 60) {
+        skillLevel.textContent += " - " + levelText[4];
+      } else if(widthNumber <= 90 && widthNumber > 75) {
+        skillLevel.textContent += " - " + levelText[5];
+      } else if(widthNumber > 90) {
+        skillLevel.textContent += " - " + levelText[6];
+      }
     }
     
     const skill_tl = gsap.timeline({
@@ -153,7 +164,13 @@ skillLevels.forEach((skillLevel) => {
 
 skills_ttl.play()
 
-const fancyText = document.querySelectorAll(".highlight-word")
-fancyText.forEach(text => {
-  text.textContent += "()"
-})
+// Mobile Navbar ToggleMenu
+const menuIcon = document.querySelector('.mobile-menu-icon');
+const navbar = document.querySelector('.mobile-navbar');
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('change');
+
+  navbar.classList.toggle('closed');
+  navbar.classList.toggle('open');
+}

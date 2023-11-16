@@ -23,13 +23,13 @@
 
     <div class="cursor"></div>
 
-    <div class="mobile-menu-icon" onclick="toggleNavbar()">
+    <div class="mobile-menu-icon">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
 
-    <div class="mobile-navbar hidden">
+    <div class="mobile-navbar closed">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -351,13 +351,5 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        function toggleNavbar() {
-            console.log("click!")
-            const navbar = document.querySelector('.mobile-navbar');
-            navbar.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>
