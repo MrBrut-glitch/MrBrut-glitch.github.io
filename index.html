@@ -21,7 +21,24 @@
 </head>
 <body>
 
-    <div class="cursor mobile-hidden"></div>
+    <div class="cursor"></div>
+
+    <div class="mobile-menu-icon" onclick="toggleNavbar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="mobile-navbar hidden">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <nav class="navbar hidden">
         <ul>
@@ -334,5 +351,13 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        function toggleNavbar() {
+            console.log("click!")
+            const navbar = document.querySelector('.mobile-navbar');
+            navbar.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>

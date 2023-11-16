@@ -79,7 +79,14 @@ function setActiveSection() {
   })
 }
 
-const texts = [' web developer', ' software developer', 'n enthusiastic musician']
+function getTexts() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? [' web dev', ' software dev', 'n musician'] : [' web developer', ' software developer', 'n enthusiastic musician'];
+}
+
+let texts = getTexts()
+
+window.onresize = () => texts = getTexts()
+
 let typeCursor = gsap.to('.underline', {opacity: 0, ease: "power2.inOupow", repeat: -1})
 
 function startTextAnimation() {

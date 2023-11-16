@@ -7,6 +7,25 @@
     }
 }
 
+/* Mobile Devices */
+@media screen and (max-width: 1023px) {
+    .cursor {
+        display: none;
+    }
+
+    .body--container {
+        width: 85%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     h1 { font-size: 6em; font-family: 'Cairo Play', sans-serif; }
@@ -16,31 +35,15 @@
     h5 { font-size: 1.4em; }
     p { font-size: 1.2em; text-align: justify; }
     strong { font-size: 2.5em; color: var(--disable); }
-    
-    .body--container {
-        width: 80%;
-    }
-
-    .mobile-hidden {
-        display: none;
-    }
 }
 
 /* Mobile phone */
 @media screen and (max-width: 767px) {
-    h1 { font-size: 4em; font-family: 'Cairo Play', sans-serif; }
-    h2 { font-size: 3em; font-family: 'Cairo Play', sans-serif; }
-    h3 { font-size: 2em; }
-    h4 { font-size: 1.5em; }
-    h5 { font-size: 1.2em; }
-    p { font-size: 1em; text-align: justify; }
-    strong { font-size: 2em; color: var(--disable); }
-    
-    .body--container {
-        width: 90%;
-    }
-
-    .mobile-hidden {
-        display: none;
-    }
+    h1 { font-size: 64px; font-family: 'Cairo Play', sans-serif; }
+    h2 { font-size: 48px; font-family: 'Cairo Play', sans-serif; }
+    h3 { font-size: 32px; }
+    h4 { font-size: 24px; }
+    h5 { font-size: 20px; }
+    p { font-size: 18px; text-align: justify; }
+    strong { font-size: 32px; color: var(--disable); }
 }
