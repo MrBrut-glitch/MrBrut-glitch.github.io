@@ -1,10 +1,11 @@
 import splitType from "https://cdn.skypack.dev/split-type@latest"
 
-gsap.registerPlugin(TextPlugin)
-gsap.registerPlugin(ScrollTrigger)
-
 window.onload = () => {
+  gsap.registerPlugin(TextPlugin)
+  gsap.registerPlugin(ScrollTrigger)
+
   loadHeroAnimation()
+  window.scrollTo(0, 0)
 }
 
 const cursor = document.querySelector(".cursor");
@@ -144,3 +145,8 @@ skillLevels.forEach((skillLevel) => {
 });
 
 skills_ttl.play()
+
+const fancyText = document.querySelectorAll(".highlight-word")
+fancyText.forEach(text => {
+  text.textContent += "()"
+})

@@ -1,5 +1,10 @@
 @import "./default.css";
 
+.body--container {
+    width: 60%;
+    margin: 0 auto;
+}
+
 .cursor {
     height: 20px;
     width: 20px;
@@ -25,14 +30,8 @@ body:hover > .cursor {
 }
 
 section {
-    min-height: 80vh;
+    height: 100%;
     margin-bottom: 20vh;
-}
-
-.section--title {
-    animation: fade linear both;
-    animation-timeline: view();
-    animation-range: entry 30% cover 30%;
 }
 
 .section--title {
@@ -41,7 +40,7 @@ section {
     line-height: 1;
 }
 
-.fancyText {
+.highlightText {
     font-family: 'Cairo Play', sans-serif;
     font-weight: 700;
 }
@@ -67,13 +66,14 @@ section {
 }
 
 .navbar li.current {
-    background-color: var(--accent);
+    background-color: var(--primary);
     transition: all 0.5s ease-in-out;
 }
 
 .navbar li:hover {
     transform: translateX(10%);
-    background-color: rgb(241 90 41);
+    /* background-color: rgb(241 90 41); */
+    background-color: var(--accent);
 }
 
 .navbar li a {
@@ -90,10 +90,12 @@ section {
 }
 
 .hero {
-    height: 100vh;
+    height: 100svh;
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     pointer-events: none;
 
@@ -340,16 +342,8 @@ section {
     color: var(--text);
 }
 
-.contact--form footer {
-    min-height: 10vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-
 .footer__container {
+    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-between;

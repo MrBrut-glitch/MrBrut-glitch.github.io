@@ -8,18 +8,20 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.png" media="(prefers-color-scheme: dark)">
 
     <link rel="stylesheet" href="./style/main.css" type="text/css">
+    <link rel="stylesheet" href="./style/responsive.css" type="text/css">
     <script type="module" src="./script/app.js" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://kit.fontawesome.com/fc53583b5f.js" crossorigin="anonymous"></script>
 
     <title>Adrian Bakalarz</title>
 </head>
 <body>
 
-    <div class="cursor"></div>
+    <div class="cursor mobile-hidden"></div>
 
     <nav class="navbar hidden">
         <ul>
@@ -32,312 +34,305 @@
         </ul>
     </nav>
 
-    <div class="navbar--mobile hidden">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <div class="body--container">
+        <section id="home" class="hero hidden">
+            <div class="hero--container">
+                <strong>Hi, my name is</strong>
+                <h1>Adrian <span>Bakalarz</span></h1>
+                <h3>and I'm a<span class="hero__textAnimation"></span><span class="underline" style="opacity: 1;">_</span></h3>
+            </div>
+        </section>
+
+        <main class="content">
+            <section id="about" class="about">
+                <div class="section--title">
+                    <strong>Who I Am</strong>
+                    <h2>About me_</h2>
+                </div>
+                <p>I am <span class="highlightText highlight-number">age = 17</span> years old and <span class="highlightText highlight-word">student</span> at the HTBLA Kaindorf a. d. Sulm  in the third year. 
+                    I chose this institution because I discovered the world of computer science at an early age. In the three years of my 
+                    educational <span class="highlightText highlight-word">journey</span>, I have already been able to gain a lot of experience, but 
+                    I have not only learned through <span class="highlightText highlight-word">school</span>, but also through the interest 
+                    and <span class="highlightText highlight-word">motivation</span> that drives me. So, <span class="highlightText highlight-word">coding</span> has 
+                    grown on me and is one of my main <span class="highlightText highlight-word">passions</span>.
+                </p>
+                <p>
+                    My interests span a wide range of <span class="highlightText highlight-word">technical</span> and creative fields. On my journey through programming I got to know 
+                    languages like <span class="highlightText code">&lt;/ C, Java, Javascript/Typescript, Python, PHP &gt;</span> and I also deal with web development. I am always up for new tasks 
+                    and challenges. Furthermore I'm very curious, like to learn <span class="highlightText highlight-word">new things</span>. 
+                    Besides that, I'm also fascinated by databases, cybersecurity, AI and much more.
+                </p>
+                <p>
+                    Outside of the digital world, my hobbies are a <span class="highlightText highlight-word">colorful</span> contrast to my technology interests. <span class="highlightText highlight-word">Music</span> is an important part 
+                    of my life, and I play the viola and flute. I play in the wind band Grenzlandtrachtenkapelle (GTK) Mureck. Another instrument 
+                    I recently learned is the piano, which further enriches my love of music. Also the world of <span class="highlightText highlight-word">chess</span> fascinates me, but in the end music wins.
+                </p>
+                <p>
+                    My personal life path is a mishmash of experiences from different countries. Originally, I come from <span class="highlightText highlight-word">Luxembourg</span>, where I first 
+                    attended elementary school. In 2017, my life took a <span class="highlightText highlight-word">significant</span> turn when I moved to Austria to the beautiful province of Styria. 
+                    I continued my education in Austria, where I completed secondary school with excellent results. This educational success gave me 
+                    the <span class="highlightText highlight-word">opportunity</span> to enroll at HTBLA Kaindorf.
+                </p>
+            </section>
+            <section id="skills" class="skills">
+                <div class="section--title">
+                    <strong>Mastering Abilities</strong>
+                    <h2>Skills_</h2>
+                </div>
+                <div class="programming-skills">
+                    <!-- <h4><i class="fa-solid fa-code"></i> programming skills</h4> -->
+                    <div id="Fronted" class="skills-chapter">
+                        <h5>Fronted</h5>
+                        <div class="skills__container">
+                            <p>HTML5</p>
+                            <div class="skills__background">
+                                <div class="skills__level">90%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>CSS3</p>
+                            <div class="skills__background">
+                                <div class="skills__level">80%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>Javascript & Typescript</p>
+                            <div class="skills__background">
+                                <div class="skills__level">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Backend">
+                        <h5>Backend</h5>
+                        <div class="skills__container">
+                            <p>PHP</p>
+                            <div class="skills__background">
+                                <div class="skills__level">50%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>Node.js</p>
+                            <div class="skills__background">
+                                <div class="skills__level">40%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>Java</p>
+                            <div class="skills__background">
+                                <div class="skills__level">70%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>C</p>
+                            <div class="skills__background">
+                                <div class="skills__level">65%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>MySQL</p>
+                            <div class="skills__background">
+                                <div class="skills__level">45%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Frontend">
+                        <h5>Framework</h5>
+                        <div class="skills__container">
+                            <p>Vue.js</p>
+                            <div class="skills__background">
+                                <div class="skills__level">60%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>Express.js</p>
+                            <div class="skills__background">
+                                <div class="skills__level">20%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>GSAP.js</p>
+                            <div class="skills__background">
+                                <div class="skills__level">70%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="software skills">
+                    <!-- <h4><i class="fa-solid fa-screwdriver-wrench"></i> tools</h4> -->
+                    <div id="productivity">
+                        <h5>Productivity</h5>
+                        <div class="skills__container">
+                            <p>GIT & GitHub</p>
+                            <div class="skills__background">
+                                <div class="skills__level">85%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>Microsoft Office</p>
+                            <div class="skills__background">
+                                <div class="skills__level">90%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="desgin">
+                        <h5>Services</h5>
+                        <div class="skills__container">
+                            <p>Docker</p>
+                            <div class="skills__background">
+                                <div class="skills__level">80%</div>
+                            </div>
+                        </div>
+                        <div class="skills__container">
+                            <p>Apache & Nginx</p>
+                            <div class="skills__background">
+                                <div class="skills__level">65%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="experience" class="experience">
+                <div class="section--title">
+                    <strong>Exploring the Depths</strong>
+                    <h2>Experience_</h2>
+                </div>
+                <p>In the span of my <span class="highlightText highlight-word">life</span>, I have been able to gather a lot of experience and 
+                    keep expanding it more and more. It consists not only of knowledge, but with which I deal or have to deal 
+                    each day. Recently, I <span class="highlightText highlight-word">volunteered</span> at the <a href="https://fifteenseconds.com/" target="_blank">Fifteen Seconds Festival</a> 
+                    <span class="highlightText highlight-number">year = 2023</span> as a backstage manager and was able to learn a lot about <span class="highlightText highlight-word">responsibility</span>, team work and much more.</p>
+                <div class="bubble--container">
+                    <div class="bubble">
+                        <p>Notion</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Domain & DNS Managment</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Project Managment</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Canva</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Hosting</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Network Engineering</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Visual Studio Code</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Cloud</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Hardware Engineering</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Oracle SQL</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Linux (Ubuntu/Debian)</p>
+                    </div>
+                    <div class="bubble">
+                        <p>API Development</p>
+                    </div>
+                    <div class="bubble">
+                        <p>GIMP</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Junior Company</p>
+                    </div>
+                    <div class="bubble">
+                        <p>JetBrains IDE</p>
+                    </div>
+                    <div class="bubble">
+                        <p>Wordpress & Joomla</p>
+                    </div>
+                    <div class="bubble">
+                        <p>MobaXterm & Putty</p>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="projects">
+                <div class="section--title">
+                    <strong>Work Showcase</strong>
+                    <h2>Projects_</h2>
+                </div>
+                <div class="showcase">
+                    <div class="thumbnail thumbnail--awesome">
+                        <div class="thumbnail__overlay">
+                            <a class="btn" href="#0">DETAILS</a>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p>Case Study</p>
+                        <h5>Awesome Project</h5>
+                        <p>This project is awesome!
+                        </p>
+                    </div>
+                </div>
+                <div class="showcase showcase--inverted">
+                    <div class="desc">
+                        <p>Case Study</p>
+                        <h5>Awesome Project</h5>
+                        <p>This project is awesome!
+                        </p>
+                    </div>
+                    <div class="thumbnail">
+                        <div class="thumbnail__overlay">
+                            <a class="btn" href="#0">DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase">
+                    <div class="thumbnail thumbnail--awesome">
+                        <div class="thumbnail__overlay">
+                            <a class="btn" href="#0">DETAILS</a>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p>Case Study</p>
+                        <h5>Awesome Project</h5>
+                        <p>This project is awesome!
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <div class="section--title">
+                    <strong>Say Hello</strong>
+                    <h2>Contact_</h2>
+                </div>
+                <div class="contact--form">
+                    <h5>Let's connect, chat a little or just stay in touch</h5>
+                    <form action="sendEmail" method="POST">
+                        <h5>just let me know your 
+                            <input type="text" id="name" class="name" placeholder="name">
+                            , 
+                            your 
+                            <input type="text" id="email" class="email" placeholder="email address"> 
+                            and 
+                            your 
+                            <input type="text" id="request" class="request" placeholder="request"> and 
+                            <button type="submit">send</button> it over
+                        </h5>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer__container">
+                <span class="footer__copyright-text">&copy; 2023 All rights reserved | Made with &lt;3 from Austria</span>
+                <ul class="footer__social-media">
+                    <li><i class="fa-brands fa-github"></i></li>
+                    <li><i class="fa-brands fa-linkedin"></i></li>
+                    <li><i class="fa-brands fa-discord"></i></li>
+                </ul>
+            </div>
+        </footer>
     </div>
-
-    <section id="home" class="hero hidden">
-        <strong>Hi, my name is</strong>
-        <h1>Adrian <span>Bakalarz</span></h1>
-        <h3>and I'm a<span class="hero__textAnimation"></span><span class="underline" style="opacity: 1;">_</span></h3>
-    </section>
-
-    <main class="content">
-        <section id="about" class="about">
-            <div class="section--title">
-                <strong>Who I Am</strong>
-                <h2>About me_</h2>
-            </div>
-            <p>I am <span class="fancyText">age = 17</span> years old and <span class="fancyText">student()</span> at the HTBLA Kaindorf a. d. Sulm  in the third year. 
-                I chose this institution because I discovered the world of computer science at an early age. In the three years of my 
-                educational <span class="fancyText">journey()</span>, I have already been able to gain a lot of experience, but 
-                I have not only learned through <span class="fancyText">school()</span>, but also through the interest 
-                and <span class="fancyText">motivation()</span> that drives me. So, <span class="fancyText">coding()</span> has 
-                grown on me and is one of my main <span class="fancyText">passions()</span>.
-            </p>
-            <p>
-                My interests span a wide range of <span class="fancyText">technical()</span> and creative fields. On my journey through programming I got to know 
-                languages like <span class="fancyText">&lt;/ C, Java, Javascript/Typescript, Python, PHP &gt;</span> and I also deal with web development. I am always up for new tasks 
-                and challenges. Furthermore I'm very curious, like to learn <span class="fancyText">new things()</span>. 
-                Besides that, I'm also fascinated by databases, cybersecurity, AI and much more.
-            </p>
-            <p>
-                Outside of the digital world, my hobbies are a <span class="fancyText">colorful()</span> contrast to my technology interests. <span class="fancyText">Music()</span> is an important part 
-                of my life, and I play the viola and flute. I play in the wind band Grenzlandtrachtenkapelle (GTK) Mureck. Another instrument 
-                I recently learned is the piano, which further enriches my love of music. Also the world of <span class="fancyText">chess()</span> fascinates me, but in the end music wins.
-            </p>
-            <p>
-                My personal life path is a mishmash of experiences from different countries. Originally, I come from <span class="fancyText">Luxembourg()</span>, where I first 
-                attended elementary school. In 2017, my life took a <span class="fancyText">significant()</span> turn when I moved to Austria to the beautiful province of Styria. 
-                I continued my education in Austria, where I completed secondary school with excellent results. This educational success gave me 
-                the <span class="fancyText">opportunity()</span> to enroll at HTBLA Kaindorf.
-            </p>
-        </section>
-        <section id="skills" class="skills">
-            <div class="section--title">
-                <strong>Mastering Abilities</strong>
-                <h2>Skills_</h2>
-            </div>
-            <div class="programming-skills">
-                <!-- <h4><i class="fa-solid fa-code"></i> programming skills</h4> -->
-                <div id="Fronted" class="skills-chapter">
-                    <h5>Fronted</h5>
-                    <div class="skills__container">
-                        <p>HTML5</p>
-                        <div class="skills__background">
-                            <div class="skills__level">90%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>CSS3</p>
-                        <div class="skills__background">
-                            <div class="skills__level">80%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>Javascript & Typescript</p>
-                        <div class="skills__background">
-                            <div class="skills__level">75%</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="Backend">
-                    <h5>Backend</h5>
-                    <div class="skills__container">
-                        <p>PHP</p>
-                        <div class="skills__background">
-                            <div class="skills__level">50%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>Node.js</p>
-                        <div class="skills__background">
-                            <div class="skills__level">40%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>Java</p>
-                        <div class="skills__background">
-                            <div class="skills__level">70%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>C</p>
-                        <div class="skills__background">
-                            <div class="skills__level">65%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>MySQL</p>
-                        <div class="skills__background">
-                            <div class="skills__level">45%</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="Frontend">
-                    <h5>Framework</h5>
-                    <div class="skills__container">
-                        <p>Vue.js</p>
-                        <div class="skills__background">
-                            <div class="skills__level">60%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>Express.js</p>
-                        <div class="skills__background">
-                            <div class="skills__level">20%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>GSAP.js</p>
-                        <div class="skills__background">
-                            <div class="skills__level">70%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="software skills">
-                <!-- <h4><i class="fa-solid fa-screwdriver-wrench"></i> tools</h4> -->
-                <div id="productivity">
-                    <h5>Productivity</h5>
-                    <div class="skills__container">
-                        <p>GIT & GitHub</p>
-                        <div class="skills__background">
-                            <div class="skills__level">85%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>Microsoft Office</p>
-                        <div class="skills__background">
-                            <div class="skills__level">90%</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="desgin">
-                    <h5>Services</h5>
-                    <div class="skills__container">
-                        <p>Docker</p>
-                        <div class="skills__background">
-                            <div class="skills__level">80%</div>
-                        </div>
-                    </div>
-                    <div class="skills__container">
-                        <p>Apache & Nginx</p>
-                        <div class="skills__background">
-                            <div class="skills__level">65%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="experience" class="experience">
-            <div class="section--title">
-                <strong>Exploring the Depths</strong>
-                <h2>Experience_</h2>
-            </div>
-            <p>In the span of my <span class="fancyText">life()</span>, I have been able to gather a lot of experience and 
-                keep expanding it more and more. It consists not only of knowledge, but with which I deal or have to deal 
-                each day. Recently, I <span class="fancyText">volunteered()</span> at the <a href="https://fifteenseconds.com/" target="_blank">Fifteen Seconds Festival</a> 
-                <span class="fancyText">year = 2023</span> as a backstage manager and was able to learn a lot about <span class="fancyText">responsibility()</span>, team work and much more.</p>
-            <div class="bubble--container">
-                <div class="bubble">
-                    <p>Notion</p>
-                </div>
-                <div class="bubble">
-                    <p>Domain & DNS Managment</p>
-                </div>
-                <div class="bubble">
-                    <p>Project Managment</p>
-                </div>
-                <div class="bubble">
-                    <p>Canva</p>
-                </div>
-                <div class="bubble">
-                    <p>Hosting</p>
-                </div>
-                <div class="bubble">
-                    <p>Network Engineering</p>
-                </div>
-                <div class="bubble">
-                    <p>Visual Studio Code</p>
-                </div>
-                <div class="bubble">
-                    <p>Cloud</p>
-                </div>
-                <div class="bubble">
-                    <p>Hardware Engineering</p>
-                </div>
-                <div class="bubble">
-                    <p>Oracle SQL</p>
-                </div>
-                <div class="bubble">
-                    <p>Linux (Ubuntu/Debian)</p>
-                </div>
-                <div class="bubble">
-                    <p>API Development</p>
-                </div>
-                <div class="bubble">
-                    <p>GIMP</p>
-                </div>
-                <div class="bubble">
-                    <p>Junior Company</p>
-                </div>
-                <div class="bubble">
-                    <p>JetBrains IDE</p>
-                </div>
-                <div class="bubble">
-                    <p>Wordpress & Joomla</p>
-                </div>
-                <div class="bubble">
-                    <p>MobaXterm & Putty</p>
-                </div>
-            </div>
-        </section>
-        <section id="projects" class="projects">
-            <div class="section--title">
-                <strong>Work Showcase</strong>
-                <h2>Projects_</h2>
-            </div>
-            <div class="showcase">
-                <div class="thumbnail thumbnail--awesome">
-                    <div class="thumbnail__overlay">
-                        <a class="btn" href="#0">DETAILS</a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <p>Case Study</p>
-                    <h5>Awesome Project</h5>
-                    <p>This project is awesome!
-                    </p>
-                </div>
-            </div>
-            <div class="showcase showcase--inverted">
-                <div class="desc">
-                    <p>Case Study</p>
-                    <h5>Awesome Project</h5>
-                    <p>This project is awesome!
-                    </p>
-                </div>
-                <div class="thumbnail">
-                    <div class="thumbnail__overlay">
-                        <a class="btn" href="#0">DETAILS</a>
-                    </div>
-                </div>
-            </div>
-            <div class="showcase">
-                <div class="thumbnail thumbnail--awesome">
-                    <div class="thumbnail__overlay">
-                        <a class="btn" href="#0">DETAILS</a>
-                    </div>
-                </div>
-                <div class="desc">
-                    <p>Case Study</p>
-                    <h5>Awesome Project</h5>
-                    <p>This project is awesome!
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <div class="section--title">
-                <strong>Say Hello</strong>
-                <h2>Contact_</h2>
-            </div>
-            <div class="contact--form">
-                <h5>Let's connect, chat a little or just stay in touch</h5>
-                <form action="./php/send_email.php" method="POST">
-                    <h5>just let me know your 
-                        <input type="text" id="name" class="name" placeholder="name">
-                         , 
-                        your 
-                        <input type="text" id="email" class="email" placeholder="email address"> 
-                        and 
-                        your 
-                        <input type="text" id="request" class="request" placeholder="request"> and 
-                        <button type="submit">send</button> it over
-                    </h5>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer__container">
-            <span class="footer__copyright-text">&copy; 2023 All rights reserved | Made with &lt;3 from Austria</span>
-            <ul class="footer__social-media">
-                <li><i class="fa-brands fa-github"></i></li>
-                <li><i class="fa-brands fa-linkedin"></i></li>
-                <li><i class="fa-brands fa-discord"></i></li>
-            </ul>
-        </div>
-    </footer>
 </body>
 </html>
