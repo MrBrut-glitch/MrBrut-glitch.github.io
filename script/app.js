@@ -13,8 +13,10 @@ window.addEventListener('scroll', () => {
 });
 
 function isMobile() {
-  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+  return window.matchMedia("only screen and (max-width: 1023px)").matches
 }
+
+console.log(isMobile())
 
 // Cursor-Animation
 const cursor = document.querySelector(".cursor");
