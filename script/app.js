@@ -58,6 +58,7 @@ const loadHeroAnimation = () => {
       onComplete: function() {
         startTextAnimation()
         setActiveSection()
+        cursor.classList.remove("hidden")
       }
     }
   );
