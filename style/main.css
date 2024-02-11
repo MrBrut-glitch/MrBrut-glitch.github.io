@@ -228,7 +228,7 @@ section {
     justify-content: center;
 }
 
-.experience .bubble {
+#others .bubble {
     margin: 10px;
     padding: 5px 25px;
     background-color: var(--accent);
@@ -238,19 +238,19 @@ section {
     font-weight: 700;
 }
 
-.experience .bubble:nth-child(6n+1) {
+#others .bubble:nth-child(6n+1) {
     background-color: rgb(251 195 64);
 }
 
-.experience .bubble:nth-child(6n+2) {
+#others .bubble:nth-child(6n+2) {
     background-color: rgb(39 170 225);
 }
 
-.experience .bubble:nth-child(6n+3) {
+#others .bubble:nth-child(6n+3) {
     background-color: rgb(242 145 198);
 }
 
-.experience .bubble:nth-child(6n+4) {
+#others .bubble:nth-child(6n+4) {
     background-color: rgb(241 90 41);
 }
 
