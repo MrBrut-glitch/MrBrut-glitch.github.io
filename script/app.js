@@ -16,8 +16,6 @@ function isMobile() {
   return window.matchMedia("only screen and (max-width: 1023px)").matches
 }
 
-console.log(isMobile())
-
 // Cursor-Animation
 const cursor = document.querySelector(".cursor");
 
