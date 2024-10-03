@@ -17,14 +17,6 @@
     --accent: #68AC75;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
-::selection {
-    background-color: transparent;
-}
-
 html {
     scroll-behavior: smooth;
 }
